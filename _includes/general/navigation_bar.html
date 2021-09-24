@@ -1,0 +1,20 @@
+<!-- Navigation -->
+<nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-light">
+    <div class="container">
+    <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.data.general.name }}</a>
+    <span class="navbar-text">{{ site.data.general.subname }}</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            {% for item in site.data.general.navigation_bar %}
+                <li {% if page.category == item.name or page.url contains "blog" and item.name == "Blog" %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+                    <a class="nav-link" href="{{ item.link | prepend:site.baseurl }}">{{ item.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+</nav>

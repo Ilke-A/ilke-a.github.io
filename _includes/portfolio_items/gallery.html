@@ -1,0 +1,18 @@
+{% assign path = "/images/projects/" | append: include.name | append: "/thumb/" %}
+{% assign gallery_files = (site.static_files | where_exp: "file", "file.path contains path") %}
+
+<div class="project-images">
+    <h3 class="page-header">Images</h3>
+    <p>Click on an image to enlarge</p>
+
+    {% for gallery_element in gallery_files %}
+        {% assign remainder = forloop.index0 | modulo: 3 %}
+        {% if remainder == 0 %}<div class="row">{% endif %}
+            <div class="col-sm-4">
+                <a href="{{ gallery_element.path  | replace: "thumb", "lg" | prepend:site.baseurl }}" data-lightbox="{{ include.name }}">
+                    <img class="img-fluid" src="{{ gallery_element.path | prepend:site.baseurl }}" alt="">
+                </a>
+            </div>
+        {% if remainder == 2 or forloop.last %}</div>{% endif %}
+    {% endfor %}
+</div>

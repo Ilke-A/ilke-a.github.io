@@ -1,0 +1,17 @@
+<li class="list-group-item">
+    <div class="media">
+        <a href="{{ include.url }}" target="_blank" class="align-self-center mr-3">
+            <img class="company-icon" src="{{ site.baseurl }}{{ include.logo }}"/>
+        </a>
+        <div class="media-body">
+            <h4>{{ include.title }}</h4>
+            <p>{{ include.subtitle }}</p>
+            {% if include.location %}
+            <p>{{ include.location }}</p>
+            {% endif %}
+        </div>
+    </div>
+    {% if include.content %}
+    <p>{{ include.content }}</p>
+    {% endif %}
+</li>

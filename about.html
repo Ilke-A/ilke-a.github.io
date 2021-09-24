@@ -1,0 +1,98 @@
+---
+layout: base_layout
+category: About
+---
+
+<style>
+
+	.test-thing img:nth-child(odd) {
+		margin-top: 30px;
+	}
+
+	.test-thing img:nth-child(even) {
+		margin-top: -30px;
+		transform: scaleX(-1);
+	}
+
+	.test-thing img {
+		display: inline-block;
+		width: 80px;
+		height: auto;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+</style>
+
+<div style="padding-bottom: 50px; padding-top: 30px" class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<img class="img-fluid align-middle" src="{{ site.baseurl }}/images/profile.png" alt="ProfilePicture">
+			<hr/>
+			<h2>Hey!</h2>
+			<h1>I'm Ilke Alers</h1>
+			<p>Character Rigger</p>
+		
+			<div class="text-justify aboutme-description">
+				<p>I am currently learning about FACS, FACS based rigs and realistic facial movement in general.
+					But I am fascinated by all sorts of rigging! Especially character body rigging and creature rigging.
+					</p>
+
+				<div class="btn-group btn-group-sm">
+					{% for link in site.data.general.about_me_links %}
+					{% if link.url contains 'http://' or link.url contains 'https://' %}
+						<a href="{{ link.url }}" target="_blank" class="btn btn-light sharp">
+					{% else %}
+						<a href="{{ link.url | prepend:site.baseurl }}" target="_blank" class="btn btn-light sharp">
+					{% endif %}
+						<span class="{{ link.icon }}"></span>
+						{{ link.text }}
+					</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-8">
+
+			<h4>Skills</h4>
+			<div class="skills-container aboutme-section">
+				<div class="container">
+					<table class="table">
+						<tr>
+							<th>Rigging</th>
+							<td>Maya</td>
+						</tr>
+						<tr>
+							<th>Blendshape modeling</th>
+							<td>Maya, ZBrush</td>
+						</tr>
+						<tr>
+							<th>Basic scripting</th>
+							<td>Python, Mel</td>
+						</tr>
+					</table>
+					
+				</div>
+			</div>
+
+			{% for experience_section in site.data.general.experiences %}
+			<h4>{{ experience_section.name }}</h4>
+			<div class="skills-container aboutme-section">
+				<div class="container">
+					<ul class="list-group list-group-flush">
+						{% for experience in experience_section.elements %}
+							{% include about/experience_item.html
+								logo = experience.logo
+								title = experience.title
+								subtitle = experience.subtitle
+								location = experience.location
+								content = experience.content
+								url = experience.url
+							%}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+---
+layout: base_layout
+---
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="sticky-top" style="top: 10vh;">
+            {% for element in site.data.general.navigation_bar %}
+                {% if element.name == page.category %}
+                    {% assign parent_link = element.link %}
+                {% endif %}
+            {% endfor %}
+            
+            <h1 class="project-header">{{ page.title }}</h1>
+            <p>{{ page.short | markdownify }}</p>
+            <p class="text-justify">
+                {{ page.summary | markdownify }}
+            </p>
+            <a class="btn btn-sm btn-dark" href="{{parent_link}}">Return</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            {% if page.video %}
+            {% include portfolio_items/video.html url=page.video %}
+            {% elsif page.image %}
+            <a href="{{ page.image | prepend:site.baseurl }}" data-lightbox="test">
+                <img class="img-fluid rounded" src="{{ page.image | prepend:site.baseurl }}" />
+            </a>
+            {% endif %}
+
+            {{ content }}
+    
+            {% if page.gallery %}
+            {% include portfolio_items/gallery.html name=page.gallery %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<br>
+<br>

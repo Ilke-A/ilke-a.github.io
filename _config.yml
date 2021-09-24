@@ -1,0 +1,70 @@
+
+baseurl: "" # the subpath of your site, e.g. /blog
+production_url: "https://www.ilkealers.com"
+url: "https://www.ilkealers.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+safe                : false
+include             : [".htaccess"]
+exclude             : ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
+keep_files          : [".git", ".svn", ".gitignore", "CNAME"]
+encoding            : "utf-8"
+markdown_ext        : "markdown,mkdown,mkdn,mkd,md"
+strict_front_matter : false
+
+show_drafts         : false
+limit_posts         : 0
+future              : false
+unpublished         : false
+
+whitelist           : []
+plugins             : 
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO Config
+title: Ilke Alers
+email: ilke.alers@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Ilke Alers - Rigger
+  
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+
+sass:
+    style: compressed
+    sass_dir: _sass
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      lang: en_GB
+      latex: false
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Ilke Alers"
+      excerpt_separator: <!--more-->
+      comments: true
+      toc: true
+
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "portfolio_project"
+
+collections:
+  posts:
+    output: true
+    permalink: /blog/:categories/:title
+  projects:
+    output: true
+    permalink: /:path
