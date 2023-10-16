@@ -3,6 +3,11 @@ layout: base_layout
 category: Portfolio
 ---
 
+<div class="d-flex justify-content-center" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div style="width: 30%">
+        {% include portfolio_items/video.html url="https://player.vimeo.com/video/874927758" %}
+    </div>
+</div>
 
 {% assign tiles_per_row = 4 %}
 {% assign column_size = 12 | divided_by: tiles_per_row %}
