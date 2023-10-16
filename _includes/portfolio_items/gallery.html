@@ -1,4 +1,4 @@
-{% assign path = "/images/projects/" | append: include.name | append: "/thumb/" %}
+{% assign path = "/images/projects/" | append: include.name | append: "/lg/" %}
 {% assign gallery_files = (site.static_files | where_exp: "file", "file.path contains path") %}
 
 <div class="project-images">
@@ -9,7 +9,18 @@
         {% assign remainder = forloop.index0 | modulo: 3 %}
         {% if remainder == 0 %}<div class="row">{% endif %}
             <div class="col-sm-4">
-                <a href="{{ gallery_element.path  | replace: "thumb", "lg" | prepend:site.baseurl }}" data-lightbox="{{ include.name }}">
+
+                {% assign thumb_path = gallery_element.path | replace: "lg", "thumb" | prepend:site.baseurl %}
+                {% assign lg_path = gallery_element.path | prepend:site.baseurl %}
+
+                {% assign file = site.static_files | where: "path", thumb_path | first %}
+
+                {% if file %}
+                <a href="{{ thumb_path }}" data-lightbox="{{ include.name }}">
+                {% else %}
+                <a href="{{ lg_path }}" data-lightbox="{{ include.name }}">
+
+                {% endif %}
                     <img class="img-fluid" src="{{ gallery_element.path | prepend:site.baseurl }}" alt="">
                 </a>
             </div>

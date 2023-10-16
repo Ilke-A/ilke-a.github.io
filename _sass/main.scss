@@ -69,6 +69,10 @@ body {
     }
 }
 
+b {
+    font-weight: bold;
+}
+
 /*project page*/
 .project-header {
     text-transform: uppercase;
@@ -131,8 +135,8 @@ body {
 
 .project-cover {
 
-    height: 25vw;
-    padding: 15px;
+    height: 15vw;
+    padding: 5px;
 
     .project-cover-column {
         height: 100%;
@@ -189,6 +193,39 @@ body {
         justify-content: center;
         align-items: center;
     }
+    
+    /*Image swap on hover*/
+    &:hover {
+        .imgswap {
+            & img:first-child {
+                opacity: 0;
+            }
+            & img:last-child {
+                opacity: 1;
+            }
+        }
+    }
+
+    .imgswap {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        overflow: hidden;
+        
+        position: relative;
+
+        & img {
+            transition: opacity $hover_transition_speed;
+        }
+
+        & img:last-child {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            opacity: 0;
+        }
+    }
+    /*Image swap on hover end*/
 }
 
 @media only screen and (max-width: 768px) {

@@ -21,14 +21,19 @@ category: Portfolio
                 {% if mod == 0 %}
                     <div class="col-7 project-cover-column">
                         {%if project.video %}
-                        <div class="video-overlay">
-                            <video muted loop>
-                                <source src="{{ project.video | prepend:site.baseurl }}" type="video/mp4" />
-                            </video>
-                            <img src="{{ project.video_poster | prepend:site.baseurl }}" />
-                        </div>
+                            <div class="video-overlay">
+                                <video muted loop>
+                                    <source src="{{ project.video | prepend:site.baseurl }}" type="video/mp4" />
+                                </video>
+                                <img src="{{ project.video_poster | prepend:site.baseurl }}" />
+                            </div>
+                        {% elsif project.image_swap %}
+                            <div class="imgswap">
+                                <img class="img-fluid" src="{{ project.image | prepend:site.baseurl }}"/>
+                                <img class="img-fluid" src="{{ project.image_swap | prepend:site.baseurl }}"/>
+                            </div>
                         {% elsif project.image %}
-                        <img src="{{ project.image | prepend:site.baseurl }}"/>
+                            <img src="{{ project.image | prepend:site.baseurl }}"/>
                         {% endif %}
                     </div>
                 {% endif %}
@@ -51,14 +56,19 @@ category: Portfolio
                 {% if mod != 0 %}
                     <div class="col-7 project-cover-column">
                         {%if project.video %}
-                        <div class="video-overlay">
-                            <video muted loop>
-                                <source src="{{ project.video | prepend:site.baseurl }}" type="video/mp4" />
-                            </video>
-                            <img src="{{ project.video_poster | prepend:site.baseurl }}" />
-                        </div>
+                            <div class="video-overlay">
+                                <video muted loop>
+                                    <source src="{{ project.video | prepend:site.baseurl }}" type="video/mp4" />
+                                </video>
+                                <img src="{{ project.video_poster | prepend:site.baseurl }}" />
+                            </div>
+                        {% elsif project.image_swap %}
+                            <div class="imgswap">
+                                <img class="img-fluid" src="{{ project.image | prepend:site.baseurl }}"/>
+                                <img class="img-fluid" src="{{ project.image_swap | prepend:site.baseurl }}"/>
+                            </div>
                         {% elsif project.image %}
-                        <img src="{{ project.image | prepend:site.baseurl }}"/>
+                            <img src="{{ project.image | prepend:site.baseurl }}"/>
                         {% endif %}
                     </div>
                 {% endif %}

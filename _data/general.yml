@@ -9,24 +9,14 @@ favicon: /favicon.ico
 page_description: Ilke Alers, Rigger
 google_analytics: 
 
+resume: /downloads/IlkeAlers_CV.pdf
+
 # Navigation bar pages
 navigation_bar:
   - name: Portfolio
     link: /
   - name: About
     link: /about
-
-# Links in the top right of navigation bar
-header_social_links:
-  - text: LinkedIn
-    icon: fab fa-linkedin
-    url: https://www.linkedin.com/in/ilke-alers-14a62014b/
-  - text: Resume
-    icon: fas fa-paperclip
-    url: /downloads/IlkeAlers_CV.pdf
-  - text: Vimeo
-    icon: fab fa-vimeo
-    url: https://vimeo.com/ilkealers
 
 # Links in the about me section
 about_me_links:
@@ -43,32 +33,36 @@ about_me_links:
     icon: fab fa-vimeo
     url: https://vimeo.com/ilkealers
 
-experiences:
-  - name: Professional
-    elements:
-      - logo: images/etc/epicgames.png
-        title: Epic Games (Cubic Motion)
-        subtitle: Mar 2020 - Now | Character Rigger
-        location: Manchester, United Kingdom
-        url: https://www.cubicmotion.com/
-        content: Facial rigger on various projects
-      - logo: images/etc/cubicmotion.png
-        title: Cubic Motion
-        subtitle: Mar 2019 - Mar 2020 | Junior Character Rigger
-        location: Manchester, United Kingdom
-        url: https://www.cubicmotion.com/
-        content: Facial rigger on various projects
-      - logo: images/etc/wondermedia.png
-        title: Wonder Media
-        subtitle: Feb 2018 - Sep 2018 | Intern & Junior Rigger
-        location: Antwerp, Belgium
-        url: https://www.wonder.media/
-        content: Internship and student job as a character rigger working on multiple projects
-  - name: Education
-    elements:
-      - logo: images/etc/dae.png
-        title: Digital Arts &amp; Entertainment
-        location: Howest, Kortrijk, Belgium
-        url: http://www.digitalartsandentertainment.be/
-        content: Animation and Visual FX
+work_experiences:
+    - logo: images/etc/epicgames.png
+      title: Epic Games (Cubic Motion - 3Lateral)
+      subtitle: Mar 2020 - Nov 2023 | Character Rigger
+      location: Manchester, United Kingdom
+      url: https://www.cubicmotion.com/
+      content: |
+        <p>Building high quality <b>facial rigs and blendshape modeling</b> for MetaHuman and both client and other internal projects using 3Lateral in-house tools and pipeline.</p>
+        <p><i>MetaHuman, Black Myth: Wukong Cinematic, Horizon Forbidden West: Burning Shores</i></p>
+    - logo: images/etc/cubicmotion.png
+      title: Cubic Motion
+      subtitle: Mar 2019 - Mar 2020 | Junior Character Rigger
+      location: Manchester, United Kingdom
+      url: https://www.cubicmotion.com/
+      content: |
+          <p><b>Facial rigging</b> on various client and research projects, using different rigging pipelines from joints only rigs to full blendshape rigs.</p>
+          <p><i>Mafia 2: Definitive edition, Yakuza 7, KDA Worlds 2020</i></p>
+    - logo: images/etc/wondermedia.png
+      title: Wonder Media
+      subtitle: Feb 2018 - Sep 2018 | Intern & Junior Rigger
+      location: Antwerp, Belgium
+      url: https://www.wonder.media/
+      content: |
+          <p>Internship and student job as a <b>character rigger</b> working on multiple in-house projects. Rigs were created for a custom real-time engine.</p>
+
+education_experiences:
+    - logo: images/etc/dae.png
+      title: Digital Arts &amp; Entertainment
+      location: Howest, Kortrijk, Belgium
+      url: http://www.digitalartsandentertainment.be/
+      content:  |
+        <p>Animation and Visual FX</p>
         
