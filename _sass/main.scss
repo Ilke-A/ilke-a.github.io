@@ -44,17 +44,22 @@ body {
 
 .navbar
 {
-    height: 10vh;
     transition: 0.3s ease;
-    background-color: $base-bg-color;
 
     .navbar-brand {
         font-size: 26px;
+
+    }
+
+
+    .navbar-nav {
+        flex-flow: row;
+
     }
 
     .nav-link {
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: 18px;
         transition: border 1.0s ease;
     }
 
@@ -65,7 +70,14 @@ body {
     }
 
     & ul {
+        display: flex !important;
+        justify-content: center !important;
         font-size: 20px;
+
+        li {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
     }
 }
 
@@ -135,7 +147,7 @@ b {
 
 .project-cover {
 
-    height: 15vw;
+    aspect-ratio: 3.5;
     padding: 5px;
 
     .project-cover-column {
